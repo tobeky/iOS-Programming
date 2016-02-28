@@ -25,10 +25,12 @@ print(optionalString == nil)
 
 //: **Justin Note:**  In the example above, the variables were named optional to demonstrate that they are optionals.  In practice, it is better to not include the word "optional" in the name of the variable.  You may (and mostly should) use the same variable name after it's been unwrapped.
 
-var name: String? = "John Appleseed"
+var name: String? = nil
 var greeting = "Hello!"
 if let name = name { //The first "name" here is the name of the unwrapped variable (held as a constant)
     greeting = "Hello, \(name)"
+} else {
+    greeting = "Who are you?"
 }
 
 //: > **Experiment**:
@@ -38,7 +40,7 @@ if let name = name { //The first "name" here is the name of the unwrapped variab
 //:
 //: Another way to handle optional values is to provide a default value using the `??` operator. If the optional value is missing, the default value is used instead.
 //:
-let nickName: String? = nil
+let nickName: String? = "John"
 let fullName: String = "John Appleseed"
 let informalGreeting = "Hi \(nickName ?? fullName)"
 
@@ -55,7 +57,7 @@ case let x where x.hasSuffix("pepper"):
 default:
     print("Everything tastes good in soup.")
 }
-
+//"switch must be exhaustive" aka must account for any possibility
 //: > **Experiment**:
 //: > Try removing the default case. What error do you get?
 //:
@@ -80,6 +82,7 @@ for (kind, numbers) in interestingNumbers {
 }
 print(largest)
 
+//unsure on this
 //: > **Experiment**:
 //: > Add another variable to keep track of which kind of number was the largest, as well as what that largest number was.
 //:

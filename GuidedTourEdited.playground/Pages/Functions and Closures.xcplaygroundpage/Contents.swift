@@ -5,11 +5,11 @@
 //: **Justin Note:** Function and method names in Swift are camelcased and start with a lowercase letter.
 //:
 
-func greet(name: String, day: String) -> String {
-    return "Hello \(name), today is \(day)."
+func greet(name: String, food: String) -> String {
+    return "Hello \(name), lunch is is \(food)."
 }
 //: The above function would be called like this:
-greet("Bob", day: "Tuesday")
+greet("Bob", food: "Pizza")
 
 //: > **Experiment**:
 //: > Remove the `day` parameter. Add a parameter to include today’s lunch special in the greeting.
@@ -68,6 +68,15 @@ func sumOf(numbers: Int...) -> Int {
 sumOf()
 sumOf(42, 597, 12)
 
+func avgOf(numbers: Int...) -> Int {
+    var avg = 0
+    for number in numbers {
+        avg += number //not sure how to make it calculate the average
+    }
+    return avg
+}
+ avgOf()
+avgOf(5,10,40)
 //: > **Experiment**:
 //: > Write a function that calculates the average of its arguments.
 //:
