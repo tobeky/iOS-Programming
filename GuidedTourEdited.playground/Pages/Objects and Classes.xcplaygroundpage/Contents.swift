@@ -6,9 +6,10 @@
 //:
 class Shape {
     var numberOfSides = 0
+    let shapeType = "polygon"
     
     func simpleDescription() -> String {
-        return "A shape with \(numberOfSides) sides."
+        return "A \(shapeType) shape with \(numberOfSides) sides."
     }
 }
 

@@ -130,7 +130,7 @@ numbers.map ({
     let result = 3 * number
     return result
 })
-
+//if number is not divisible by 2, return 0... but no idea how to say this in Swift
 //: > **Experiment**:
 //: > Rewrite the closure to return zero for all odd numbers.
 //:
