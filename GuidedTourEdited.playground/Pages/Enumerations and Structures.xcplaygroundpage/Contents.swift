@@ -6,7 +6,8 @@
 
 enum Rank: Int {
     case Ace = 1
-    case Two, Three, Four, Five, Six, Seven, Eight, Nine, Ten
+    case Two = 2
+    case Three, Four, Five, Six, Seven, Eight, Nine, Ten
     case Jack, Queen, King
     
     func simpleDescription() -> String {
@@ -19,6 +20,8 @@ enum Rank: Int {
                 return "queen"
             case .King:
                 return "king"
+            case .Two:
+                return "two"
             default:
                 return String(self.rawValue)
         }
@@ -26,7 +29,13 @@ enum Rank: Int {
 }
 let ace = Rank.Ace
 let aceRawValue = ace.rawValue
+let two = Rank.Two
+let twoRawValue = two.rawValue
 
+func comparison() -> String {
+    return "Value of \(aceRawValue) is less than \(twoRawValue)"
+}
+//yoooo what why is this not working
 //: > **Experiment**:
 //: > Write a function that compares two `Rank` values by comparing their raw values.
 //:
@@ -75,7 +84,7 @@ struct Card {
 }
 let threeOfSpades = Card(rank: .Three, suit: .Spades)
 let threeOfSpadesDescription = threeOfSpades.simpleDescription()
-
+// oh jeepers
 //: > **Experiment**:
 //: > Add a method to `Card` that creates a full deck of cards, with one card of each combination of rank and suit.
 //:

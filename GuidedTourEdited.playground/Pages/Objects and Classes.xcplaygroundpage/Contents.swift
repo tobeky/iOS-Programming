@@ -70,19 +70,35 @@ class Square: NamedShape {
     }
 }
 
-let test = Square(sideLength: 5.2, name: "my test square")
+var test = Square(sideLength: 5.2, name: "my test square")
 test.area()
 test.simpleDescription()
 test.scaleBy(2)
 test.simpleDescription()
 
+//start
+
 class Circle: NamedShape{
     var radius: Double
-    init(name: String) {
-        <#code#>
+    init(radius: Double, nom: String) { //nom is name in french
+        self.radius = radius
+        super.init(name: nom)
+    }
+    
+    func areaa() -> Double {
+        return 3.14 * radius * radius
+    }
+    func myDescription() -> String {
+        return "A cool circle with a radius of \(radius)."
     }
 }
-//okay, what?
+
+let testOne = Circle(radius: 4, nom: "Pokeball")
+//test.areaa()
+//test.myDescription()
+
+
+//okay, what? why does it complain about squares. why.
 //: > **Experiment**:
 //: > Make another subclass of `NamedShape` called `Circle` that takes a radius and a name as arguments to its initializer. Implement an `area()` and a `simpleDescription()` method on the `Circle` class.
 //:
