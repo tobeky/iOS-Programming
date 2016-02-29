@@ -76,6 +76,13 @@ test.simpleDescription()
 test.scaleBy(2)
 test.simpleDescription()
 
+class Circle: NamedShape{
+    var radius: Double
+    init(name: String) {
+        <#code#>
+    }
+}
+//okay, what?
 //: > **Experiment**:
 //: > Make another subclass of `NamedShape` called `Circle` that takes a radius and a name as arguments to its initializer. Implement an `area()` and a `simpleDescription()` method on the `Circle` class.
 //:
