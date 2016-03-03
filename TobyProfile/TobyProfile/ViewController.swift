@@ -12,6 +12,7 @@ class ViewController: UIViewController {
     @IBOutlet var nameLabel: UILabel!
     @IBOutlet var profileText: UILabel!
     @IBOutlet var profileImage: UIImageView!
+    @IBOutlet var awesomeSecret: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,5 +30,8 @@ class ViewController: UIViewController {
         profileImage.image = UIImage(named: "Sylveon")
     }
 
+    @IBAction func secretButton(sender: AnyObject) {
+        awesomeSecret.text = "I'm pretty AWESOME!!!"
+    }
 }
 
