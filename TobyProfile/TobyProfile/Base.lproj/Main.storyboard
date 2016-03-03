@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="TobyProfile" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Space icon" translatesAutoresizingMaskIntoConstraints="NO" id="y0c-QM-5QL">
+                                <rect key="frame" x="181" y="203" width="240" height="218"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="218" id="7y4-Aw-C27"/>
+                                    <constraint firstAttribute="width" constant="240" id="ItQ-Nt-ih4"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aYX-KU-od0">
+                                <rect key="frame" x="253" y="429" width="96" height="30"/>
+                                <state key="normal" title="TRANSFORM!"/>
+                                <connections>
+                                    <action selector="excitingButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="c09-dp-P7N"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Toby!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Pz-2u-z6V">
+                                <rect key="frame" x="20" y="33" width="295" height="51"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="295" id="FIu-TK-2VL"/>
+                                    <constraint firstAttribute="height" constant="51" id="sLf-Fc-dE0"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <color key="textColor" red="0.25098040700000002" green="0.0" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="student and space enthusiast by day..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5CH-SO-Tia">
+                                <rect key="frame" x="20" y="92" width="560" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="dlw-ZJ-f4O"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.41560927013422821" green="0.0" blue="0.6989565855704698" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.54894422324711845" green="0.86537668969007142" blue="0.78864116116658145" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="4Pz-2u-z6V" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="13" id="3wy-4Q-ZOD"/>
+                            <constraint firstItem="aYX-KU-od0" firstAttribute="top" secondItem="y0c-QM-5QL" secondAttribute="bottom" constant="8" symbolic="YES" id="NS8-mE-BZa"/>
+                            <constraint firstItem="5CH-SO-Tia" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Oqw-r2-oTH"/>
+                            <constraint firstItem="aYX-KU-od0" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="RqO-nG-d5T"/>
+                            <constraint firstItem="aYX-KU-od0" firstAttribute="centerX" secondItem="y0c-QM-5QL" secondAttribute="centerX" id="efM-8k-5oA"/>
+                            <constraint firstItem="5CH-SO-Tia" firstAttribute="top" secondItem="4Pz-2u-z6V" secondAttribute="bottom" constant="8" symbolic="YES" id="r44-hv-pdY"/>
+                            <constraint firstItem="5CH-SO-Tia" firstAttribute="leading" secondItem="4Pz-2u-z6V" secondAttribute="leading" id="sHi-Hz-uLS"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="aYX-KU-od0" secondAttribute="bottom" constant="141" id="uXj-yE-6el"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="nameLabel" destination="4Pz-2u-z6V" id="0Fq-uB-OqO"/>
+                        <outlet property="profileImage" destination="y0c-QM-5QL" id="rTc-9R-okg"/>
+                        <outlet property="profileText" destination="5CH-SO-Tia" id="kb7-VK-gJ3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="245" y="335"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Space icon" width="32" height="32"/>
+    </resources>
+    <color key="tintColor" red="1" green="0.98765878391345441" blue="0.98979629376797396" alpha="1" colorSpace="calibratedRGB"/>
+</document>
