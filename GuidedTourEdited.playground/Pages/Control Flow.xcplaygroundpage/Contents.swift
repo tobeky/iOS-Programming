@@ -2,6 +2,7 @@
 //:
 //: Use `if` and `switch` to make conditionals, and use `for`-`in`, `for`, `while`, and `repeat`-`while` to make loops. Parentheses around the condition or loop variable are optional. Braces around the body are required.
 //:
+//done!
 let individualScores = [75, 43, 103, 87, 12]
 var teamScore = 0
 for score in individualScores {
@@ -73,18 +74,18 @@ let interestingNumbers = [
     "Square": [1, 4, 9, 16, 25],
 ]
 var largest = 0
-var category = ("Prime", "Fibonacci", "Square")
+var category: String? = ""
 for (kind, numbers) in interestingNumbers {
     for number in numbers {
         if number > largest {
             largest = number
+            category = kind
         }
     }
 }
 print(largest)
 print(category)
 
-//unsure on this
 //: > **Experiment**:
 //: > Add another variable to keep track of which kind of number was the largest, as well as what that largest number was.
 //:
