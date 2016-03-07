@@ -4,7 +4,7 @@
 //:
 //: **Justin Note:** Function and method names in Swift are camelcased and start with a lowercase letter.
 //:
-
+//done!
 func greet(name: String, food: String) -> String {
     return "Hello \(name), lunch is is \(food)."
 }
@@ -68,15 +68,18 @@ func sumOf(numbers: Int...) -> Int {
 sumOf()
 sumOf(42, 597, 12)
 
-func avgOf(numbers: Int...) -> Int {
+func avgOf(numbers: Int...) -> Int? {
     var avg = 0
     for number in numbers {
-        avg = number
+        avg += number
     }
-    return avg
+    if numbers.count == 0 {
+        return nil
+    }
+    return avg / numbers.count
 }
  avgOf()
-avgOf(0, 5, 10) //how do i make it do this
+avgOf(0, 5, 10) 
 //: > **Experiment**:
 //: > Write a function that calculates the average of its arguments.
 //:
