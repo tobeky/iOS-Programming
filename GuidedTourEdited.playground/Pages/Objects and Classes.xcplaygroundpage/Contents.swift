@@ -4,6 +4,8 @@
 //:
 //: **Justin Note:** Class (and struct) names are camelcased, but and start with an uppercase letter.  Add single lines of whitespace as needed for readability.  Whitespace can be used inside methods to organize and seperate functionality.  If you have many blank lines in a method, it may be time to refactor.
 //:
+//done!
+
 class Shape {
     var numberOfSides = 0
     let shapeType = "polygon"
@@ -70,7 +72,7 @@ class Square: NamedShape {
     }
 }
 
-var test = Square(sideLength: 5.2, name: "my test square")
+let test = Square(sideLength: 5.2, name: "my test square")
 test.area()
 test.simpleDescription()
 test.scaleBy(2)
@@ -78,27 +80,25 @@ test.simpleDescription()
 
 //start
 
+
 class Circle: NamedShape{
     var radius: Double
-    init(radius: Double, nom: String) { //nom is name in french
+    init(radius: Double, name: String) {
         self.radius = radius
-        super.init(name: nom)
+        super.init(name: name)
     }
     
     func areaa() -> Double {
         return 3.14 * radius * radius
     }
-    func myDescription() -> String {
+    override func simpleDescription() -> String {
         return "A cool circle with a radius of \(radius)."
     }
 }
 
-let testOne = Circle(radius: 4, nom: "Pokeball")
-//test.areaa()
-//test.myDescription()
-
-
-//okay, what? why does it complain about squares. why.
+let testOne = Circle(radius: 4, name: "Pokeball")
+testOne.areaa()
+testOne.simpleDescription()
 //: > **Experiment**:
 //: > Make another subclass of `NamedShape` called `Circle` that takes a radius and a name as arguments to its initializer. Implement an `area()` and a `simpleDescription()` method on the `Circle` class.
 //:

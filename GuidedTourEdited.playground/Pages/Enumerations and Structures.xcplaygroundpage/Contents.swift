@@ -5,10 +5,7 @@
 //: **Justin Note:** Like classes, enums, their values and structs are UpperCamelCased
 
 enum Rank: Int {
-    case Ace = 1
-    case Two = 2
-    case Three, Four, Five, Six, Seven, Eight, Nine, Ten
-    case Jack, Queen, King
+    case Ace = 1, Two, Three, Four, Five, Six, Seven, Eight, Nine, Ten, Jack, Queen, King
     
     func simpleDescription() -> String {
         switch self {
@@ -26,16 +23,17 @@ enum Rank: Int {
                 return String(self.rawValue)
         }
     }
+    func rankCompare (){
+        //put a thing
+    }
 }
 let ace = Rank.Ace
 let aceRawValue = ace.rawValue
 let two = Rank.Two
 let twoRawValue = two.rawValue
 
-func comparison() -> String {
-    return "Value of \(aceRawValue) is less than \(twoRawValue)"
-}
-//yoooo what why is this not working
+
+//aaaaAAA
 //: > **Experiment**:
 //: > Write a function that compares two `Rank` values by comparing their raw values.
 //:

@@ -71,12 +71,12 @@ sumOf(42, 597, 12)
 func avgOf(numbers: Int...) -> Int {
     var avg = 0
     for number in numbers {
-        avg += number //not sure how to make it calculate the average
+        avg = sumOf(number)/3 
     }
     return avg
 }
  avgOf()
-avgOf(5,10,40)
+avgOf(0, 5, 10)
 //: > **Experiment**:
 //: > Write a function that calculates the average of its arguments.
 //:
