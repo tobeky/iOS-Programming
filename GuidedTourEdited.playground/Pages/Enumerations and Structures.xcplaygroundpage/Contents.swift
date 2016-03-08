@@ -23,17 +23,19 @@ enum Rank: Int {
                 return String(self.rawValue)
         }
     }
-    func rankCompare (){
-        //put a thing
-    }
+
 }
 let ace = Rank.Ace
 let aceRawValue = ace.rawValue
 let two = Rank.Two
 let twoRawValue = two.rawValue
+let rankFromRaw = Rank(rawValue: 4)
 
+func rankCompare (firstRank: Rank, secondRank: Rank) -> Bool{
+        return firstRank.rawValue >= secondRank.rawValue
+}
+ rankCompare(.Three, secondRank: two)
 
-//aaaaAAA
 //: > **Experiment**:
 //: > Write a function that compares two `Rank` values by comparing their raw values.
 //:
@@ -47,7 +49,7 @@ if let convertedRank = Rank(rawValue: 3) {
 
 //: The case values of an enumeration are actual values, not just another way of writing their raw values. In fact, in cases where there isn’t a meaningful raw value, you don’t have to provide one.
 //:
-enum Suit {
+enum Suit: Int {
     case Spades, Hearts, Diamonds, Clubs
     func simpleDescription() -> String {
         switch self {
@@ -60,11 +62,28 @@ enum Suit {
             case .Clubs:
                 return "clubs"
         }
+            
+        }
+     func color() -> String {
+        switch self {
+        case.Spades:
+            return "black"
+        case.Clubs:
+            return "black"
+        case.Hearts:
+            return "red"
+        case.Diamonds:
+            return "red"
+        }
+       }
     }
-}
+
 
 let hearts = Suit.Hearts
+let spades = Suit.Spades
 let heartsDescription = hearts.simpleDescription()
+let heartsColor = hearts.color()
+let spadesColor = spades.color()
 
 //: > **Experiment**:
 //: > Add a `color()` method to `Suit` that returns “black” for spades and clubs, and returns “red” for hearts and diamonds.
@@ -79,10 +98,23 @@ struct Card {
     func simpleDescription() -> String {
         return "The \(rank.simpleDescription()) of \(suit.simpleDescription())"
     }
+    
+    static func createDeck () -> [Card] {
+        var deck = [Card]()
+        for cardRank in 1...13 {
+            for cardSuit in 0...3 {
+                let newCard = Card(rank: Rank(rawValue: cardRank)!, suit: Suit(rawValue: cardSuit)!)
+                deck.append(newCard)
+            }
+        }
+        return deck
+    
+    }
 }
 let threeOfSpades = Card(rank: .Three, suit: .Spades)
 let threeOfSpadesDescription = threeOfSpades.simpleDescription()
-// oh jeepers
+Card.createDeck()
+
 //: > **Experiment**:
 //: > Add a method to `Card` that creates a full deck of cards, with one card of each combination of rank and suit.
 //:
@@ -93,17 +125,23 @@ let threeOfSpadesDescription = threeOfSpades.simpleDescription()
 enum ServerResponse {
     case Result(String, String)
     case Error(String)
+    case Surprise(String)
 }
 
 let success = ServerResponse.Result("6:00 am", "8:09 pm")
 let failure = ServerResponse.Error("Out of cheese.")
+let surprise = ServerResponse.Surprise("WOAH")
 
 switch success {
     case let .Result(sunrise, sunset):
         print("Sunrise is at \(sunrise) and sunset is at \(sunset).")
     case let .Error(error):
         print("Failure...  \(error)")
+    case let .Surprise(message):
+        print("Hey... \(message)")
 }
+
+
 
 //: > **Experiment**:
 //: > Add a third case to `ServerResponse` and to the switch.

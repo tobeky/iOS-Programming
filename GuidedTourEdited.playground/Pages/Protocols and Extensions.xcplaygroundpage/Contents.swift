@@ -34,6 +34,25 @@ var b = SimpleStructure()
 b.adjust()
 let bDescription = b.simpleDescription
 
+
+enum SimpleEnum {
+    case Dogs, Cats, Bunnies
+    mutating func simpleDescription() -> String {
+        switch self {
+        case .Dogs:
+            return "Woof"
+        case .Cats:
+            return "Meow"
+        case .Bunnies:
+            return "...."
+        }
+            }
+    mutating func adjust() {
+        simpleDescription = " is what it says."
+    }
+
+    }
+
 //: > **Experiment**:
 //: > Write an enumeration that conforms to this protocol.
 //:
