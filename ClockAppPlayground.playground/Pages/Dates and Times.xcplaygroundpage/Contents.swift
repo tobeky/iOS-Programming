@@ -90,6 +90,16 @@ if let dateFromComponents = dateFromComponents {
     rangeDateComponents.day
 }
 
+if let bdayComponents = dateFromComponents {
+    let yearsSinceBirth = currentCalendar.components(.Year, fromDate: now, toDate: bdayComponents, options: .WrapComponents)
+    yearsSinceBirth.year
+    let monthsSinceBirth = currentCalendar.components(.Month, fromDate: now, toDate: bdayComponents, options: .WrapComponents)
+    monthsSinceBirth.month
+    let daysSinceBirth = currentCalendar.components(.Day, fromDate: now, toDate: bdayComponents, options: .WrapComponents)
+    daysSinceBirth.day
+}
+
+
 /*:
 > **Experiment** How old are you in years, months, and days?
 
