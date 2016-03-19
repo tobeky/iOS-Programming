@@ -109,6 +109,12 @@ if let eastCoastTimeZone = eastCoastTimeZone, greenwichMeanTime = greenwichMeanT
     currentCalendar.components([.Year, .Month, .Day, .Hour, .Minute], fromDate: now)
 }
 
+let japanTimeZone = NSTimeZone(name: "Japan")
+
+if let japanTimeZone = japanTimeZone {
+    currentCalendar.timeZone = japanTimeZone
+    currentCalendar.components([.Year, .Month, .Day, .Hour, .Minute], fromDate: now)
+}
 /*:
 > **Experiment** What time is it in Japan?
 */
