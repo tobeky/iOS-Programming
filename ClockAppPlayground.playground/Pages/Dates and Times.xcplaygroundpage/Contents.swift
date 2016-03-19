@@ -23,6 +23,15 @@ dateComponents.hour = 15
 dateComponents.minute = 31
 dateComponents.second = 55
 
+
+let bdayComponents = NSDateComponents()
+dateComponents.month = 8
+dateComponents.day = 28
+dateComponents.year = 1997
+dateComponents.hour = 12
+dateComponents.minute = 00
+dateComponents.second = 45
+
 let dateFromComponents = currentCalendar.dateFromComponents(dateComponents)
 
 /*: 
