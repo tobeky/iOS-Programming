@@ -12,17 +12,21 @@ import CoreData
 class ViewController: UITableViewController {
     
     var toDoItems = [ToDoItem]()
+    var managedContext: NSManagedObjectContext!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        managedContext = appDelegate.managedObjectContext
+        
         // Do any additional setup after loading the view, typically from a nib.
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
-        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-        let managedContext = appDelegate.managedObjectContext
+        
         
         let fetchRequest = NSFetchRequest(entityName: "ToDoItem")
         
@@ -53,7 +57,24 @@ class ViewController: UITableViewController {
         
         cell?.detailTextLabel?.text = dateFormatter.stringFromDate(toDoItems[indexPath.row].dateAdded!)
         
+        if toDoItems[indexPath.row].isDone == true {
+        cell?.accessoryType = .Checkmark
+        } else {
+            cell?.accessoryType = .None
+        }
+        
         return cell!
+    }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        toDoItems[indexPath.row].isDone = !toDoItems[indexPath.row].isDone!.boolValue
+        
+        do {
+            try managedContext.save()
+            tableView.reloadData()
+        } catch let error as NSError {
+            print(error.description)
+        }
     }
     
     @IBAction func addItem(sender: AnyObject) {
@@ -64,21 +85,18 @@ class ViewController: UITableViewController {
             
             let textField = alert.textFields!.first
             
-            let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-            let managedContext = appDelegate.managedObjectContext
-            
-            let entity = NSEntityDescription.entityForName("ToDoItem", inManagedObjectContext: managedContext)
-            let item = ToDoItem(entity: entity!, insertIntoManagedObjectContext: managedContext)
+            let entity = NSEntityDescription.entityForName("ToDoItem", inManagedObjectContext: self.managedContext)
+            let item = ToDoItem(entity: entity!, insertIntoManagedObjectContext: self.managedContext)
             
             
             item.name = textField!.text!
             item.dateAdded = NSDate()
-            item.isDone = true
+            item.isDone = false
             
             
             
             do {
-                try managedContext.save()
+                try self.managedContext.save()
                 self.toDoItems.append(item)
             } catch let error as NSError {
                 print(error.description)
