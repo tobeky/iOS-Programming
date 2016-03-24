@@ -13,6 +13,8 @@
 		11BAD46C1CA4600100C04228 /* newList.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 11BAD46A1CA4600100C04228 /* newList.xcdatamodeld */; };
 		11BAD46E1CA4600100C04228 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11BAD46D1CA4600100C04228 /* Assets.xcassets */; };
 		11BAD4711CA4600100C04228 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11BAD46F1CA4600100C04228 /* LaunchScreen.storyboard */; };
+		11BAD4811CA4845300C04228 /* ToDoItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11BAD47F1CA4845300C04228 /* ToDoItem.swift */; };
+		11BAD4861CA48B1500C04228 /* ToDoItem+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11BAD4851CA48B1500C04228 /* ToDoItem+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		11BAD46D1CA4600100C04228 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		11BAD4701CA4600100C04228 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		11BAD4721CA4600100C04228 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		11BAD47F1CA4845300C04228 /* ToDoItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDoItem.swift; sourceTree = "<group>"; };
+		11BAD4851CA48B1500C04228 /* ToDoItem+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ToDoItem+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,6 +44,7 @@
 		11BAD4571CA4600100C04228 = {
 			isa = PBXGroup;
 			children = (
+				11BAD4821CA4847400C04228 /* ManagedObjects */,
 				11BAD4621CA4600100C04228 /* newList */,
 				11BAD4611CA4600100C04228 /* Products */,
 			);
@@ -65,6 +70,15 @@
 				11BAD46A1CA4600100C04228 /* newList.xcdatamodeld */,
 			);
 			path = newList;
+			sourceTree = "<group>";
+		};
+		11BAD4821CA4847400C04228 /* ManagedObjects */ = {
+			isa = PBXGroup;
+			children = (
+				11BAD4851CA48B1500C04228 /* ToDoItem+CoreDataProperties.swift */,
+				11BAD47F1CA4845300C04228 /* ToDoItem.swift */,
+			);
+			name = ManagedObjects;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -140,7 +154,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				11BAD4661CA4600100C04228 /* ViewController.swift in Sources */,
+				11BAD4811CA4845300C04228 /* ToDoItem.swift in Sources */,
 				11BAD4641CA4600100C04228 /* AppDelegate.swift in Sources */,
+				11BAD4861CA48B1500C04228 /* ToDoItem+CoreDataProperties.swift in Sources */,
 				11BAD46C1CA4600100C04228 /* newList.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -254,10 +270,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = newList/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = BenningtonCS.newList;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -265,6 +283,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = newList/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = BenningtonCS.newList;

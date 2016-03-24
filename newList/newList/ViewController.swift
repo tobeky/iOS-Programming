@@ -11,7 +11,7 @@ import CoreData
 
 class ViewController: UITableViewController {
     
-    var toDoItems = [NSManagedObject]()
+    var toDoItems = [ToDoItem]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,7 +28,7 @@ class ViewController: UITableViewController {
         
         do {
             let results = try managedContext.executeFetchRequest(fetchRequest)
-            toDoItems = results as! [NSManagedObject]
+            toDoItems = results as! [ToDoItem]
         } catch let error as NSError {
             print(error.description)
         }
@@ -46,6 +46,13 @@ class ViewController: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("toDoCell")
         cell?.textLabel?.text = toDoItems[indexPath.row].valueForKey("name") as? String
+        
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateStyle = .ShortStyle
+        dateFormatter.timeStyle = .ShortStyle
+        
+        cell?.detailTextLabel?.text = dateFormatter.stringFromDate(toDoItems[indexPath.row].dateAdded!)
+        
         return cell!
     }
     
@@ -61,14 +68,18 @@ class ViewController: UITableViewController {
             let managedContext = appDelegate.managedObjectContext
             
             let entity = NSEntityDescription.entityForName("ToDoItem", inManagedObjectContext: managedContext)
-            let item = NSManagedObject(entity: entity!, insertIntoManagedObjectContext: managedContext)
+            let item = ToDoItem(entity: entity!, insertIntoManagedObjectContext: managedContext)
             
-            item.setValue(textField!.text!, forKey: "name")
             
-            self.toDoItems.append(item)
+            item.name = textField!.text!
+            item.dateAdded = NSDate()
+            item.isDone = true
+            
+            
             
             do {
                 try managedContext.save()
+                self.toDoItems.append(item)
             } catch let error as NSError {
                 print(error.description)
             }
