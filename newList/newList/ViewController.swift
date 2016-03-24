@@ -75,11 +75,17 @@ class ViewController: UITableViewController {
             
             self.tableView.reloadData()
         }
+        
+        let cancel = UIAlertAction(title: "Cancel", style: .Default) {
+            (action: UIAlertAction) -> Void in
+        }
+        
         alert.addTextFieldWithConfigurationHandler() {
             (UITextField) -> Void in
         }
         
         alert.addAction(save)
+        alert.addAction(cancel)
         
         presentViewController(alert, animated: true, completion: nil)
     }
