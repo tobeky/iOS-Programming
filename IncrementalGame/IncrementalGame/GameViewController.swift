@@ -11,6 +11,9 @@ import SpriteKit
 
 class GameViewController: UIViewController {
 
+    @IBOutlet weak var numRobots: UILabel!
+    var robotCount: Int = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -50,4 +53,12 @@ class GameViewController: UIViewController {
     override func prefersStatusBarHidden() -> Bool {
         return true
     }
+    
+    @IBAction func addRobot(sender: AnyObject) {
+        robotCount = robotCount + 1
+        numRobots.text = "\(robotCount) robots"
+    }
+   
+    
+    
 }
