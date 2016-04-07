@@ -57,15 +57,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         self.addChild(player)
         
-        let waitAction = SKAction.waitForDuration(1)
-        let methodAction = SKAction.runBlock(sayHi)
-        
-        runAction(SKAction.repeatActionForever(SKAction.sequence([waitAction, methodAction])))
     }
     
-    func sayHi() {
-        print("Hi")
-    }
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         /* Called when a touch begins */
@@ -82,6 +75,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             
             sprite.xScale = 0.5
             sprite.yScale = 0.5
+            sprite.color = .blackColor()
+            sprite.colorBlendFactor = 1.0
             sprite.physicsBody = SKPhysicsBody(circleOfRadius: sprite.size.width/2)
             sprite.physicsBody?.categoryBitMask = PhysicsLayer.InvadingSpaceship
             sprite.physicsBody?.collisionBitMask = PhysicsLayer.None
@@ -92,8 +87,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             let action = SKAction.rotateByAngle(CGFloat(M_PI), duration: 1)
             let moveToPlayer = SKAction.moveTo(playerLocation, duration: 4)
             
-            let rotateFiveTimes = SKAction.repeatAction(action, count: 5)
-            let sequence = SKAction.sequence([rotateFiveTimes, moveToPlayer])
+            let rotateThrice = SKAction.repeatAction(action, count: 3)
+            let sequence = SKAction.sequence([rotateThrice, moveToPlayer])
             sprite.runAction(sequence)
             
             self.addChild(sprite)
