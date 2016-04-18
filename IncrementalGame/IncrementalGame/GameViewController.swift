@@ -12,7 +12,9 @@ import SpriteKit
 class GameViewController: UIViewController {
 
     @IBOutlet weak var numRobots: UILabel!
+    @IBOutlet weak var amountMoney: UILabel!
     var robotCount: Int = 0
+    var money: Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,7 +60,9 @@ class GameViewController: UIViewController {
         robotCount = robotCount + 1
         numRobots.text = "\(robotCount) robots"
     }
-   
+    func addMoney() {
+        amountMoney.text = "\(money) coins"
+    }
     
     
 }
