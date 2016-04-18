@@ -32,6 +32,8 @@ class GameViewController: UIViewController {
             scene.scaleMode = .AspectFill
             
             skView.presentScene(scene)
+            
+            NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: #selector (addMoney), userInfo: nil, repeats: true)
         }
     }
 
@@ -56,13 +58,25 @@ class GameViewController: UIViewController {
         return true
     }
     
-    @IBAction func addRobot(sender: AnyObject) {
-        robotCount = robotCount + 1
-        numRobots.text = "\(robotCount) robots"
-    }
-    func addMoney() {
+    @IBAction func getMoney(sender: AnyObject) {
+        money = money + 1
         amountMoney.text = "\(money) coins"
+        
     }
     
+    @IBAction func addRobot(sender: AnyObject) {
+        if money >= 10 * robotCount {
+            money = money - 10 * robotCount
+            robotCount = robotCount + 1
+            numRobots.text = "\(robotCount) robots"
+        } else {
+            
+        }
+    }
+    
+    func addMoney() {
+        money = money + robotCount
+        amountMoney.text = "\(money) coins"
+    }
     
 }
