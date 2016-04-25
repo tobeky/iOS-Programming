@@ -13,8 +13,10 @@ class GameViewController: UIViewController {
 
     @IBOutlet weak var numRobots: UILabel!
     @IBOutlet weak var amountMoney: UILabel!
+    @IBOutlet weak var numSuperBots: UILabel!
     var robotCount: Int = 0
     var money: Int = 0
+    var superBotCount: Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -65,17 +67,30 @@ class GameViewController: UIViewController {
     }
     
     @IBAction func addRobot(sender: AnyObject) {
-        if money >= 10 * robotCount {
-            money = money - 10 * robotCount
+       let robotCost = 10 * (robotCount + 1)
+        if money >= robotCost {
+            money = money - robotCost
             robotCount = robotCount + 1
-            numRobots.text = "\(robotCount) robots"
+            numRobots.text = "\(robotCount) Robots"
         } else {
             
         }
     }
     
+    @IBAction func addSuperBot(sender: AnyObject) {
+        let superBotCost = 100 * (superBotCount + 1)
+        if money >= superBotCost {
+            money = money - superBotCost
+            superBotCount = superBotCount + 1
+            numSuperBots.text = "\(superBotCount) SuperBots"
+        } else {
+            
+        }
+    }
+    
+    
     func addMoney() {
-        money = money + robotCount
+        money = money + robotCount + 10 * superBotCount
         amountMoney.text = "\(money) coins"
     }
     
