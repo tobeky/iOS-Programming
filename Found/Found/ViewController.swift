@@ -32,8 +32,34 @@ class ViewController: UIViewController {
     }
 
     @IBAction func addAPin(sender: AnyObject) {
-        let pin = Pin(newLocation: mapView.userLocation.coordinate, withName: "Justin")
-        mapView.addAnnotation(pin)
+        let alert = UIAlertController(title: "New Pin", message: "Name the Pin", preferredStyle: .Alert) //alert exists when you hit the button
+        
+        let save = UIAlertAction(title: "Save", style: .Default){ //save is an option, it does this:
+            (action: UIAlertAction) -> Void in
+            
+            let textField = alert.textFields!.first
+            
+            let item = Pin(newLocation: self.mapView.userLocation.coordinate, withName: textField!.text!) //creates pin
+            
+            self.mapView.addAnnotation(item) //puts pin on map
+            
+        }
+        
+        let cancel = UIAlertAction(title: "Cancel", style: .Default) {
+            (action: UIAlertAction) -> Void in
+        }
+        
+        alert.addTextFieldWithConfigurationHandler() {
+            (UITextField) -> Void in
+        }
+        
+        alert.addAction(save)
+        alert.addAction(cancel)
+        
+        presentViewController(alert, animated: true, completion: nil)
+        
+       
+        
     }
     
     //For fun!!!
