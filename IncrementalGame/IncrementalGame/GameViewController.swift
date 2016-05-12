@@ -18,6 +18,12 @@ class GameViewController: UIViewController {
     var money: Int = 0
     var superBotCount: Int = 0
     
+    
+    @IBOutlet weak var robotImage: UIImageView!
+    
+    @IBOutlet weak var superImage: UIImageView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -72,6 +78,8 @@ class GameViewController: UIViewController {
             money = money - robotCost
             robotCount = robotCount + 1
             numRobots.text = "\(robotCount) Robots"
+            robotImage.hidden = false
+
         } else {
             
         }
@@ -83,6 +91,7 @@ class GameViewController: UIViewController {
             money = money - superBotCost
             superBotCount = superBotCount + 1
             numSuperBots.text = "\(superBotCount) SuperBots"
+             superImage.hidden = false
         } else {
             
         }
@@ -93,5 +102,8 @@ class GameViewController: UIViewController {
         money = money + robotCount + 10 * superBotCount
         amountMoney.text = "\(money) coins"
     }
+    
+    
+    
     
 }
