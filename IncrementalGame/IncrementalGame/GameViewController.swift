@@ -14,9 +14,12 @@ class GameViewController: UIViewController {
     @IBOutlet weak var numRobots: UILabel!
     @IBOutlet weak var amountMoney: UILabel!
     @IBOutlet weak var numSuperBots: UILabel!
+    @IBOutlet weak var robotButton: UIButton!
+    @IBOutlet weak var superBotButton: UIButton!
     var robotCount: Int = 0
     var money: Int = 0
     var superBotCount: Int = 0
+    
     
     
     @IBOutlet weak var robotImage: UIImageView!
@@ -43,6 +46,7 @@ class GameViewController: UIViewController {
             
             NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: #selector (addMoney), userInfo: nil, repeats: true)
         }
+        
     }
 
     override func shouldAutorotate() -> Bool {
@@ -81,11 +85,12 @@ class GameViewController: UIViewController {
             robotImage.hidden = false
 
         } else {
-            
+            sender.setTitleColor(UIColor.redColor(), forState: UIControlState.Normal)
         }
     }
     
     @IBAction func addSuperBot(sender: AnyObject) {
+       
         let superBotCost = 100 * (superBotCount + 1)
         if money >= superBotCost {
             money = money - superBotCost
@@ -93,14 +98,29 @@ class GameViewController: UIViewController {
             numSuperBots.text = "\(superBotCount) SuperBots"
              superImage.hidden = false
         } else {
-            
+           
         }
+        
     }
     
     
     func addMoney() {
         money = money + robotCount + 10 * superBotCount
         amountMoney.text = "\(money) coins"
+        
+        if money <= 10 * (robotCount + 1) {
+            robotButton.setTitleColor(UIColor.grayColor(), forState: UIControlState.Normal)
+        } else {
+            robotButton.setTitleColor(UIColor(red: 0.25098, green: 0, blue: 0.50196, alpha: 1.0), forState: UIControlState.Normal)
+        }
+        
+        if money <= 100 * (superBotCount + 1) {
+           superBotButton.setTitleColor(UIColor.grayColor(), forState: UIControlState.Normal)
+        } else {
+            superBotButton.setTitleColor(UIColor(red: 0.25098, green: 0, blue: 0.50196, alpha: 1.0), forState: UIControlState.Normal)
+        }
+        
+        
     }
     
     

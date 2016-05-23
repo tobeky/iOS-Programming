@@ -159,7 +159,9 @@
                         <outlet property="amountMoney" destination="uIR-N4-5U3" id="xDg-od-WEF"/>
                         <outlet property="numRobots" destination="V0m-tN-mHZ" id="TqG-2b-pSn"/>
                         <outlet property="numSuperBots" destination="UfV-hQ-BUu" id="1Gp-Os-57V"/>
+                        <outlet property="robotButton" destination="rnD-A2-OXf" id="gO8-Tb-Sc3"/>
                         <outlet property="robotImage" destination="pwz-rL-MOe" id="Ncf-wt-wbD"/>
+                        <outlet property="superBotButton" destination="K6a-qT-wGD" id="TdP-07-rKi"/>
                         <outlet property="superImage" destination="e42-hK-gdK" id="ZXY-pk-em9"/>
                     </connections>
                 </viewController>
