@@ -85,7 +85,7 @@ class GameViewController: UIViewController {
             robotImage.hidden = false
 
         } else {
-            sender.setTitleColor(UIColor.redColor(), forState: UIControlState.Normal)
+
         }
     }
     
