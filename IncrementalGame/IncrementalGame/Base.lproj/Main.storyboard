@@ -140,7 +140,25 @@
                             <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Robot" translatesAutoresizingMaskIntoConstraints="NO" id="pwz-rL-MOe">
                                 <rect key="frame" x="31" y="254" width="30" height="40"/>
                             </imageView>
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bronzeRobot" translatesAutoresizingMaskIntoConstraints="NO" id="U6o-b8-2Mn">
+                                <rect key="frame" x="31" y="254" width="30" height="40"/>
+                            </imageView>
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="silverRobot" translatesAutoresizingMaskIntoConstraints="NO" id="oUU-uA-R3t">
+                                <rect key="frame" x="31" y="254" width="30" height="40"/>
+                            </imageView>
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="goldRobot" translatesAutoresizingMaskIntoConstraints="NO" id="ycS-rB-LlF">
+                                <rect key="frame" x="31" y="254" width="30" height="40"/>
+                            </imageView>
                             <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="SuperBot" translatesAutoresizingMaskIntoConstraints="NO" id="e42-hK-gdK">
+                                <rect key="frame" x="83" y="254" width="30" height="40"/>
+                            </imageView>
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bronzeSuper" translatesAutoresizingMaskIntoConstraints="NO" id="gYe-9S-jyr">
+                                <rect key="frame" x="83" y="254" width="30" height="40"/>
+                            </imageView>
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="silverSuper" translatesAutoresizingMaskIntoConstraints="NO" id="vGY-ju-cRH">
+                                <rect key="frame" x="83" y="254" width="30" height="40"/>
+                            </imageView>
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="goldSuper" translatesAutoresizingMaskIntoConstraints="NO" id="wz0-79-qoY">
                                 <rect key="frame" x="83" y="254" width="30" height="40"/>
                             </imageView>
                         </subviews>
@@ -157,10 +175,16 @@
                     </view>
                     <connections>
                         <outlet property="amountMoney" destination="uIR-N4-5U3" id="xDg-od-WEF"/>
+                        <outlet property="bronzeRobotImage" destination="U6o-b8-2Mn" id="tTX-aY-CYn"/>
+                        <outlet property="bronzeSuperImage" destination="gYe-9S-jyr" id="FhI-9X-hWg"/>
+                        <outlet property="goldRobotImage" destination="ycS-rB-LlF" id="baA-4L-cx5"/>
+                        <outlet property="goldSuperImage" destination="wz0-79-qoY" id="QCx-Iz-IeK"/>
                         <outlet property="numRobots" destination="V0m-tN-mHZ" id="TqG-2b-pSn"/>
                         <outlet property="numSuperBots" destination="UfV-hQ-BUu" id="1Gp-Os-57V"/>
                         <outlet property="robotButton" destination="rnD-A2-OXf" id="gO8-Tb-Sc3"/>
                         <outlet property="robotImage" destination="pwz-rL-MOe" id="Ncf-wt-wbD"/>
+                        <outlet property="silverRobotImage" destination="oUU-uA-R3t" id="zaW-YT-Q8X"/>
+                        <outlet property="silverSuperImage" destination="vGY-ju-cRH" id="mMR-T5-oyf"/>
                         <outlet property="superBotButton" destination="K6a-qT-wGD" id="TdP-07-rKi"/>
                         <outlet property="superImage" destination="e42-hK-gdK" id="ZXY-pk-em9"/>
                     </connections>
@@ -174,5 +198,11 @@
         <image name="Coin" width="272" height="277"/>
         <image name="Robot" width="16" height="24"/>
         <image name="SuperBot" width="16" height="24"/>
+        <image name="bronzeRobot" width="16" height="24"/>
+        <image name="bronzeSuper" width="16" height="24"/>
+        <image name="goldRobot" width="16" height="24"/>
+        <image name="goldSuper" width="16" height="24"/>
+        <image name="silverRobot" width="16" height="24"/>
+        <image name="silverSuper" width="16" height="24"/>
     </resources>
 </document>

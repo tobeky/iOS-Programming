@@ -21,10 +21,18 @@ class GameViewController: UIViewController {
     var superBotCount: Int = 0
     
     
-    
     @IBOutlet weak var robotImage: UIImageView!
-    
     @IBOutlet weak var superImage: UIImageView!
+    
+    @IBOutlet weak var bronzeRobotImage: UIImageView!
+    @IBOutlet weak var silverRobotImage: UIImageView!
+    @IBOutlet weak var goldRobotImage: UIImageView!
+    
+    
+    @IBOutlet weak var bronzeSuperImage: UIImageView!
+    @IBOutlet weak var silverSuperImage: UIImageView!
+    @IBOutlet weak var goldSuperImage: UIImageView!
+    
     
     
     override func viewDidLoad() {
@@ -87,6 +95,16 @@ class GameViewController: UIViewController {
         } else {
 
         }
+        if robotCount >= 5 {
+            robotImage.hidden = true
+            bronzeRobotImage.hidden = false
+        }; if robotCount >= 20 {
+            bronzeRobotImage.hidden = true
+            silverRobotImage.hidden = false
+        }; if robotCount >= 50 {
+            silverRobotImage.hidden = true
+            goldRobotImage.hidden = false
+        }
     }
     
     @IBAction func addSuperBot(sender: AnyObject) {
@@ -100,6 +118,17 @@ class GameViewController: UIViewController {
         } else {
            
         }
+        if superBotCount >= 5 {
+            superImage.hidden = true
+            bronzeSuperImage.hidden = false
+        }; if superBotCount >= 20 {
+            bronzeSuperImage.hidden = true
+            silverSuperImage.hidden = false
+        }; if superBotCount >= 50 {
+            silverSuperImage.hidden = true
+            goldSuperImage.hidden = false
+        }
+        
         
     }
     
